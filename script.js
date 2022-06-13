@@ -156,7 +156,7 @@ console.log(ages); */
 ////////////////////////////////////
 /* 39. BASIC ARRAY OPERATIONS (METHODS)*/
 ////////////////////////////////////
-const friends = ['Michael', 'Steven', 'Peter'];
+/* const friends = ['Michael', 'Steven', 'Peter'];
 
 // Add elements
 const newLength = friends.push('Jay');
@@ -185,4 +185,100 @@ console.log(friends.includes(23));
 
 if(friends.includes('Steven')){
 	console.log('You have a friend called Steven');
-}
+} */
+
+////////////////////////////////////
+/* 42. INTRODUCTION TO OBJECTS*/
+////////////////////////////////////
+/* const jorgeArray = [
+	'Jorge',
+	'Gonzalez',
+	2037-1988,
+	'teacher',
+	['Michael','Peter','Steven']
+];
+
+const jorge = {
+	firstName: 'Jorge',
+	lastName: 'Gonzalez',
+	age:2037 - 1988,
+	job: 'teacher',
+	friends: ['Michael','Peter','Steven']
+}; */
+
+////////////////////////////////////
+/* 43. DOTS VS BRACKET NOTATION*/
+////////////////////////////////////
+// const jorge = {
+// 	firstName: 'Jorge',
+// 	lastName: 'Gonzalez',
+// 	age:2037 - 1988,
+// 	job: 'teacher',
+// 	friends: ['Michael','Peter','Steven']
+// };
+// // console.log(jorge);
+
+// // console.log(jorge.lastName);
+// // console.log(jorge['lastName']);
+
+// const nameKey = 'Name';
+// // console.log(jorge['first' + nameKey]);
+// // console.log(jorge['last' + nameKey]);
+
+// // const interestedIn = prompt('What do you want to know about Jorge? Choose between firstName, lastName, age, job, and friends');
+
+// /* if(jorge[interestedIn]){
+// 	console.log(jorge[interestedIn]);
+// }else{
+// 	console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
+// } */
+
+// jorge.location = 'Mexico';
+// jorge['twitter'] = '@jorgegonzalez';
+// // console.log(jorge);
+
+// // Challenge
+// // Jorge has 3 friends, and his best friend is called Michael
+// console.log(`${jorge['firstName']} has ${jorge.friends.length} and his best friend is called ${jorge.friends[0]}`); 
+
+////////////////////////////////////
+/* 44. OBJECT METHODS*/
+////////////////////////////////////
+const jorge = {
+	firstName: 'Jorge',
+	lastName: 'Gonzalez',
+	birthYear: 1988,
+	job: 'teacher',
+	friends: ['Michael','Peter','Steven'],
+	hasDriverLicense: true,
+
+	/* calcAge: function(birthYear){
+		return 2022 - birthYear;
+	} */
+
+	// calcAge: function(){
+	// 	console.log(this);
+	// 	return 2022 - this.birthYear;
+	// }
+
+	calcAge: function(){
+		this.age = 2022 - this.birthYear;
+		return this.age;
+	},
+	// challenge: function(){
+	// 	return console.log(`${this.firstName} is a ${this.age}-years old and he has a driver's license.`);
+	// },
+	getSummary: function(){
+		return `${this.firstName} is a ${this.calcAge()}-years old ${jorge.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver license.`
+	}
+};
+
+console.log(jorge.calcAge());
+console.log(jorge.age);
+console.log(jorge.age);
+console.log(jorge.age);
+// console.log(jorge.challenge);
+
+// Challenge
+// 'Jorge is a 34-year old teacher, and he has a driver's license.'
+console.log(jorge.getSummary());

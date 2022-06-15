@@ -239,46 +239,146 @@ const jorge = {
 
 // // Challenge
 // // Jorge has 3 friends, and his best friend is called Michael
-// console.log(`${jorge['firstName']} has ${jorge.friends.length} and his best friend is called ${jorge.friends[0]}`); 
+// console.log(`${jorge['firstName']} has ${jorge.friends.length} and his best friend is called ${jorge.friends[0]}`);
 
 ////////////////////////////////////
 /* 44. OBJECT METHODS*/
 ////////////////////////////////////
-const jorge = {
-	firstName: 'Jorge',
-	lastName: 'Gonzalez',
-	birthYear: 1988,
-	job: 'teacher',
-	friends: ['Michael','Peter','Steven'],
-	hasDriverLicense: true,
+// const jorge = {
+// 	firstName: 'Jorge',
+// 	lastName: 'Gonzalez',
+// 	birthYear: 1988,
+// 	job: 'teacher',
+// 	friends: ['Michael','Peter','Steven'],
+// 	hasDriverLicense: true,
 
-	/* calcAge: function(birthYear){
-		return 2022 - birthYear;
-	} */
+// 	/* calcAge: function(birthYear){
+// 		return 2022 - birthYear;
+// 	} */
 
-	// calcAge: function(){
-	// 	console.log(this);
-	// 	return 2022 - this.birthYear;
-	// }
+// 	// calcAge: function(){
+// 	// 	console.log(this);
+// 	// 	return 2022 - this.birthYear;
+// 	// }
 
-	calcAge: function(){
-		this.age = 2022 - this.birthYear;
-		return this.age;
-	},
-	// challenge: function(){
-	// 	return console.log(`${this.firstName} is a ${this.age}-years old and he has a driver's license.`);
-	// },
-	getSummary: function(){
-		return `${this.firstName} is a ${this.calcAge()}-years old ${jorge.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver license.`
+// 	calcAge: function(){
+// 		this.age = 2022 - this.birthYear;
+// 		return this.age;
+// 	},
+// 	// challenge: function(){
+// 	// 	return console.log(`${this.firstName} is a ${this.age}-years old and he has a driver's license.`);
+// 	// },
+// 	getSummary: function(){
+// 		return `${this.firstName} is a ${this.calcAge()}-years old ${jorge.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver license.`
+// 	}
+// };
+
+// console.log(jorge.calcAge());
+// console.log(jorge.age);
+// console.log(jorge.age);
+// console.log(jorge.age);
+// // console.log(jorge.challenge);
+
+// // Challenge
+// // 'Jorge is a 34-year old teacher, and he has a driver's license.'
+// console.log(jorge.getSummary());s
+
+////////////////////////////////////
+/* 46. ITERATION: THE FOR LOOP*/
+////////////////////////////////////
+// console.log("Lifting weights repetition 1 🏋️‍♀️");
+
+//for loop keeps running while condition is TRUE
+/* for (let rep = 1; rep <= 10; rep++) {
+	console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+} */
+
+////////////////////////////////////
+/* 47. ILOOPING ARRAYS, BREAKING AND CONTINUING*/
+////////////////////////////////////
+// const jorge = [
+// 	"Jorge",
+// 	"Gonzalez",
+// 	2037 - 1988,
+// 	"teacher",
+// 	["Michael", "Peter", "Steven"],
+// ];
+
+// const types = [];
+
+// for (let i = 0; i < jorge.length; i++) {
+// 	//Reading from jorge array
+// 	console.log(jorge[i], typeof jorge[i]);
+
+// 	//Filling types array
+// 	// types[i] = typeof jorge[i];
+// 	types.push(typeof jorge[i]);
+// }
+
+// console.log(types);
+
+// const years = [1988, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+// 	ages.push(2022 - years[i]);
+// }
+// console.log(ages);
+
+// //continue and break
+// console.log("-----ONLY STRINGS-----");
+// for (let i = 0; i < jorge.length; i++) {
+// 	if (typeof jorge[i] !== "string") continue;
+// 	console.log(jorge[i], typeof jorge[i]);
+// }
+
+// console.log("-----BREAK WITH NUMBER-----");
+// for (let i = 0; i < jorge.length; i++) {
+// 	if (typeof jorge[i] === "number") break;
+// 	console.log(jorge[i], typeof jorge[i]);
+// }
+
+////////////////////////////////////
+/* 48. LOOPING BACKWARDS AND LOOPS IN LOOPS*/
+////////////////////////////////////
+/* const jorge = [
+	"Jorge",
+	"Gonzalez",
+	2037 - 1988,
+	"teacher",
+	["Michael", "Peter", "Steven"],
+	true,
+];
+
+for (let i = jorge.length - 1; i >= 0; i--) {
+	console.log(i, jorge[i]);
+} */
+
+/* for (let exercise = 1; exercise < 4; exercise++) {
+	console.log(`---------- Starting exercise ${exercise}`);
+	for (let rep = 1; rep < 6; rep++) {
+		console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
 	}
-};
+} */
 
-console.log(jorge.calcAge());
-console.log(jorge.age);
-console.log(jorge.age);
-console.log(jorge.age);
-// console.log(jorge.challenge);
+////////////////////////////////////
+/* 49. THE WHILE LOOP*/
+////////////////////////////////////
+/* for (let rep = 1; rep <= 10; rep++) {
+	console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+} */
 
-// Challenge
-// 'Jorge is a 34-year old teacher, and he has a driver's license.'
-console.log(jorge.getSummary());
+/* let rep = 1;
+while (rep <= 10) {
+	console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+	rep++;
+} */
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+while (dice !== 6) {
+	console.log(`You rolled a ${dice}`);
+	dice = Math.trunc(Math.random() * 6) + 1;
+	if (dice === 6) console.log("Loop is about to end...");
+}
